@@ -1,0 +1,62 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
+  align-items: center;
+}
+
+.profile__edit-button {
+  background: transparent no-repeat center url(../Images/Vector\ Pencil.svg);
+  height: 24px;
+  width: 24px;
+  border-color: white;
+}
+.profile__edit-button:hover {
+  opacity: 0.6;
+}
+
+.profile__add-button {
+  background: transparent url(../Images/Vector\ PLus.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  grid-area: button;
+  margin-left: auto;
+  border-color: white;
+}
+.profile__add-button:hover {
+  opacity: 0.6;
+}
+.profile__title {
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 500;
+  grid-area: title;
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.profile__description {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  grid-area: description;
+  margin: 7px 0 0;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.profile__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: center;
+  margin-right: 24px;
+}
