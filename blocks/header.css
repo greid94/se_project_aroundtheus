@@ -1,7 +1,15 @@
 .header {
   border-bottom-style: solid;
-  border-color: #545454;
+  border-color: rgba(84, 84, 84, 0.7);
   border-width: 1px;
-  opacity: 0.7;
-  height: 74px;
+}
+
+.header__logo {
+  padding-bottom: 41px;
+}
+@media screen and (max-width: 320px) {
+  .header_logo {
+    height: 24px;
+    width: 126px;
+  }
 }

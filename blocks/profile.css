@@ -17,10 +17,11 @@
   background: transparent no-repeat center url(../Images/Vector\ Pencil.svg);
   height: 24px;
   width: 24px;
-  border-color: white;
+  border: 1px solid #fff;
 }
 .profile__edit-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .profile__add-button {
@@ -29,10 +30,12 @@
   height: 50px;
   grid-area: button;
   margin-left: auto;
-  border-color: white;
+  border: 2px solid #fff;
+  border-radius: 2px;
 }
 .profile__add-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 .profile__title {
   font-size: 42px;
@@ -41,6 +44,10 @@
   grid-area: title;
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .profile__description {
@@ -59,4 +66,42 @@
   object-fit: cover;
   background: center;
   margin-right: 24px;
+}
+@media screen and (max-width: 320px) {
+  .profile__title {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 14px 0 0;
+    width: 100%;
+    text-align: center;
+  }
+  .profile__image {
+    margin: 0 0 30px;
+  }
+  .profile__add-button {
+    width: 282px;
+    height: 50px;
+    background-size: 5%;
+    margin: 36px 0 0;
+  }
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+  }
+  .profile {
+    flex-direction: column;
+  }
 }
