@@ -16,3 +16,8 @@
   position: relative;
   margin: 0 auto;
 }
+@media screen and (max-width: 320px) {
+  .page__content {
+    margin-top: 28px;
+  }
+}
