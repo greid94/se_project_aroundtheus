@@ -103,7 +103,32 @@
           <p class="footer__description">&copy; 2022 Around The U.S.</p>
         </footer>
       </main>
+      <div class="modal">
+        <div class="modal__container">
+          <button class="modal__close" type="button"></button>
+          <h2 class="modal__heading">Edit profile</h2>
+          <form class="modal__form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Jaques Cousteau"
+              class="modal__input"
+            />
+
+            <input
+              type="text"
+              name="description"
+              placeholder="Explorer"
+              class="modal__input"
+            />
+            <button class="modal__button" type="submit">
+              <span class="modal__button-text">Save</span>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
