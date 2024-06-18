@@ -6,8 +6,8 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  display: flex;
   padding: 0 19px;
+  display: none;
 }
 
 .modal__container {
@@ -30,10 +30,10 @@
   margin: 0 0 24px;
 }
 
-.modal_opened {
-  visibility: visible;
+.modal__opened {
   pointer-events: all;
   opacity: 1;
+  display: flex;
 }
 
 .modal__close {
