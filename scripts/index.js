@@ -1,4 +1,4 @@
-const InitialCards = [
+const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -49,18 +49,18 @@ function classPopup() {
   profileEditModal.classList.remove("modal__opened");
 }
 
-function getCardElement(InitialCards) {
+function getCardElement(initialCards) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   //access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__text");
   //set the path to the image to the link field of the object
-  cardImageEl.src = InitialCards.link;
+  cardImageEl.src = initialCards.link;
   //set the image alt text to the name field of the object
-  cardImageEl.alt = InitialCards.name;
+  cardImageEl.alt = initialCards.name;
   //set the card title to the name field of the object, too
-  cardTitleEl.textContent = InitialCards.name;
+  cardTitleEl.textContent = initialCards.name;
   //return the ready HTML element with the filled-in data
   return cardElement;
 }
@@ -90,7 +90,7 @@ modalButtonClose.addEventListener("click", () => {
 
 profileEditForm.addEventListener("submit", handleProlileEditSubmit);
 
-InitialCards.forEach((InitialCards) => {
-  const cardElement = getCardElement(InitialCards);
+initialCards.forEach((initialCards) => {
+  const cardElement = getCardElement(initialCards);
   cardListEl.prepend(cardElement);
 });
