@@ -30,7 +30,7 @@
   margin: 0 0 24px;
 }
 
-.modal__opened {
+.modal_opened {
   pointer-events: all;
   opacity: 1;
   display: flex;
