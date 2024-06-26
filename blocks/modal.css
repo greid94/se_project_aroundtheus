@@ -111,4 +111,7 @@
     bottom: calc(100% + 14px);
     left: calc(100% - 25px);
   }
+  .modal__heading {
+    font-size: 18px;
+  }
 }
