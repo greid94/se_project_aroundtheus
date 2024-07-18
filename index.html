@@ -50,7 +50,7 @@
             id="modal-button-close"
           ></button>
           <h2 class="modal__heading">Edit profile</h2>
-          <form class="modal__form">
+          <form class="modal__form" id="edit-profile-form">
             <input
               type="text"
               name="title"
@@ -82,19 +82,19 @@
           id="modal-button-close"
         ></button>
         <h2 class="modal__heading">New Place</h2>
-        <form class="modal__form">
+        <form class="modal__form" id="add-card-form">
           <input
             type="text"
             name="title"
             placeholder="Title"
-            class="modal__input modal__input_type_url"
+            class="modal__input modal__input_type_title"
           />
 
           <input
             type="text"
             name="url"
             placeholder="Image URL"
-            class="modal__input modal__input_type_title"
+            class="modal__input modal__input_type_url"
           />
           <button class="modal__button" type="submit">
             <span class="modal__button-text">Save</span>
@@ -104,8 +104,9 @@
     </div>
     <!-- ---------------------------- card template ---------------------------- -->
     <template id="card-template">
-      <li class="card">
+      <li class="card" id="card-temp">
         <img src="" alt="" class="card__image" />
+        <button class="card__delete-button"></button>
         <div class="card__description">
           <h2 class="card__text"></h2>
           <button class="card__like-button" type="button"></button>
