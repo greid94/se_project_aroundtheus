@@ -47,6 +47,7 @@ const addNewCardBtn = document.querySelector(".profile__add-button");
 const addCardFormEl = addCardModal.querySelector(".modal__form");
 const cardTitleInput = addCardFormEl.querySelector(".modal__input_type_title");
 const cardUrlInput = addCardFormEl.querySelector(".modal__input_type_url");
+const previewModal = document.querySelector(".modal__type_preview");
 
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
@@ -76,6 +77,7 @@ function getCardElement(initialCards) {
   //set the card title to the name field of the object, too
   cardTitleEl.textContent = initialCards.name;
   // set the path to get like button and turn it on and off
+
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
@@ -84,6 +86,11 @@ function getCardElement(initialCards) {
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
+  });
+  cardImageEl.addEventListener("click", () => {
+    const modalImgEl = previewModal.querySelector("modal__image_popup");
+    modalImgEl.src = initialCards.link;
+    openModal(previewModal);
   });
 
   //return the ready HTML element with the filled-in data
