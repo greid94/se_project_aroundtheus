@@ -10,7 +10,7 @@
   display: flex;
   visibility: hidden;
   opacity: 0;
-  transition:visibility 0s 0.5s, opacity 0.5s linear;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
 .modal__container {
@@ -38,7 +38,6 @@
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s linear;
- 
 }
 
 .modal__close {
@@ -109,8 +108,7 @@
   max-height: 75vh;
   max-width: 75vw;
   display: flex;
-
-  
+}
 
 .modal__image_popup {
   object-fit: cover;
