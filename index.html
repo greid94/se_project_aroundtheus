@@ -38,7 +38,7 @@
           <ul class="cards__list"></ul>
         </section>
         <footer class="footer page__section">
-          <p class="footer__description">&copy; 2022 Around The U.S.</p>
+          <p class="footer__description">&copy; 2022 Gavin Reid</p>
         </footer>
       </main>
       <!-- --------------------------- edit card modal --------------------------- -->
@@ -103,11 +103,15 @@
         </div>
       </div>
       <!-- ------------------------- preview card modal -------------------------- -->
-      <div class="modal modal__type_preview" id="preview-modal">
-        <div class="modal__content">
-          <button type="button" class="modal__button"></button>
-          <figcaption class="modal__caption"></figcaption>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container modal__type_preview">
+          <button
+            type="button"
+            class="modal__close"
+            id="modal-button-close"
+          ></button>
           <img src="" alt="" class="modal__image modal__image_popup" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>

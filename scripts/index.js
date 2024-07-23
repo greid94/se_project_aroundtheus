@@ -47,8 +47,10 @@ const addNewCardBtn = document.querySelector(".profile__add-button");
 const addCardFormEl = addCardModal.querySelector(".modal__form");
 const cardTitleInput = addCardFormEl.querySelector(".modal__input_type_title");
 const cardUrlInput = addCardFormEl.querySelector(".modal__input_type_url");
-const previewModal = document.querySelector(".modal__type_preview");
-
+const previewModal = document.querySelector("#preview-modal");
+const previewModalClose = previewModal.querySelector("#modal-button-close");
+const modalImgEl = previewModal.querySelector(".modal__image_popup");
+const modalCaption = previewModal.querySelector(".modal__caption");
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
@@ -88,9 +90,13 @@ function getCardElement(initialCards) {
     likeButton.classList.toggle("card__like-button_active");
   });
   cardImageEl.addEventListener("click", () => {
-    const modalImgEl = previewModal.querySelector("modal__image_popup");
     modalImgEl.src = initialCards.link;
+    modalCaption.textContent = initialCards.name;
     openModal(previewModal);
+  });
+
+  previewModalClose.addEventListener("click", () => {
+    closePopup(previewModal);
   });
 
   //return the ready HTML element with the filled-in data
