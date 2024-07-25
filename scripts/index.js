@@ -61,23 +61,23 @@ function closePopup(modal) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
-function renderCard(initialCards, wrapper) {
-  const cardElement = getCardElement(initialCards);
+function renderCard(data, wrapper) {
+  const cardElement = getCardElement(data);
   wrapper.prepend(cardElement);
 }
 
-function getCardElement(initialCards) {
+function getCardElement(data) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   //access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__text");
   //set the path to the image to the link field of the object
-  cardImageEl.src = initialCards.link;
+  cardImageEl.src = data.link;
   //set the image alt text to the name field of the object
-  cardImageEl.alt = initialCards.name;
+  cardImageEl.alt = data.name;
   //set the card title to the name field of the object, too
-  cardTitleEl.textContent = initialCards.name;
+  cardTitleEl.textContent = data.name;
   // set the path to get like button and turn it on and off
 
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
@@ -90,8 +90,9 @@ function getCardElement(initialCards) {
     likeButton.classList.toggle("card__like-button_active");
   });
   cardImageEl.addEventListener("click", () => {
-    modalImgEl.src = initialCards.link;
-    modalCaption.textContent = initialCards.name;
+    modalImgEl.src = data.link;
+    modalCaption.textContent = data.name;
+    modalImgEl.alt = data.name;
     openModal(previewModal);
   });
 
@@ -112,11 +113,13 @@ function handleProlileEditSubmit(e) {
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup(profileEditModal);
 }
+
 function handleAddCardSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
+  e.target.reset();
   closePopup(addCardModal);
 }
 
@@ -142,7 +145,7 @@ addCardModalClose.addEventListener("click", () => {
 });
 
 profileEditForm.addEventListener("submit", handleProlileEditSubmit);
-addCardModal.addEventListener("submit", handleAddCardSubmit);
+addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((initialCards) => {
   renderCard(initialCards, cardListEl);
 });
