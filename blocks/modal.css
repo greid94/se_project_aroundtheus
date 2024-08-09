@@ -126,7 +126,33 @@
   font-family: "Inter", Arial, sans-serif;
   line-height: 14.52px;
 }
+.modal__error {
+  font-size: 12px;
+  visibility: hidden;
+  display: block;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 15px;
+  color: #ff0000;
+  top: calc(100% + 5px);
+  left: 0;
+  transition: opacity0.3;
+  width: 358px;
+}
 
+.modal__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.modal__error_visible {
+  visibility: visible;
+}
+
+.modal__button_disabled {
+  opacity: 0.2;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
 @media screen and (min-width: 320px) and (max-width: 880px) {
   .modal__container {
     width: 282px;

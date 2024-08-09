@@ -58,6 +58,8 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeOverlay);
 }
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -65,6 +67,18 @@ function openModal(modal) {
 function renderCard(data, wrapper) {
   const cardElement = getCardElement(data);
   wrapper.prepend(cardElement);
+}
+
+function closeModalEsc(e) {
+  if (e.key === "Escape") {
+    const modalOpened = document.querySelector(".modal_opened");
+    closePopup(modalOpened);
+  }
+}
+function closeOverlay(e) {
+  if (e.target === e.currentTarget) {
+    closePopup(e.currentTarget);
+  }
 }
 
 function getCardElement(data) {
@@ -90,6 +104,7 @@ function getCardElement(data) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
+
   cardImageEl.addEventListener("click", () => {
     modalImgEl.src = data.link;
     modalCaption.textContent = data.name;
