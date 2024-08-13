@@ -58,6 +58,8 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeOverlay);
 }
 function renderCard(data, wrapper) {
   const cardElement = getCardElement(data);
@@ -77,8 +79,6 @@ function closeOverlay(e) {
 }
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  modal.addEventListener("mousedown", closeOverlay);
 }
 
 function getCardElement(data) {
