@@ -56,11 +56,6 @@ const closeButtons = document.querySelectorAll(".modal__close");
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
 
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  modal.addEventListener("mousedown", closeOverlay);
-}
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
@@ -79,6 +74,11 @@ function closeOverlay(e) {
   if (e.target === e.currentTarget) {
     closePopup(e.currentTarget);
   }
+}
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeOverlay);
 }
 
 function getCardElement(data) {
