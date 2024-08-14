@@ -61,6 +61,11 @@ function openModal(modal) {
   document.addEventListener("keydown", closeModalEsc);
   modal.addEventListener("mousedown", closeOverlay);
 }
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  // modal.addEventListener("mousedown", closeOverlay);
+}
 function renderCard(data, wrapper) {
   const cardElement = getCardElement(data);
   wrapper.prepend(cardElement);
@@ -73,12 +78,12 @@ function closeModalEsc(e) {
   }
 }
 function closeOverlay(e) {
-  if (e.target === e.currentTarget) {
+  if (
+    e.target === e.currentTarget ||
+    e.target.classList.contains("modal__close")
+  ) {
     closePopup(e.currentTarget);
   }
-}
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(data) {
