@@ -172,4 +172,12 @@
   .moda__button {
     font-size: 14px;
   }
+  .modal__error {
+   display: flex;
+   justify-content: center;
+    
+
+  }
+  
+  }
 }
