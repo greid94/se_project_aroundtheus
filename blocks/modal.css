@@ -102,7 +102,7 @@
   font-size: 18px;
   cursor: pointer;
 }
-.modal__type_preview {
+.modal__container_type_preview {
   background: none;
   padding: 0;
   max-height: 75vh;
@@ -135,8 +135,12 @@
   color: #ff0000;
   top: calc(100% + 5px);
   left: 0;
-  transition: opacity0.3;
+  transition: opacity 0.3;
   width: 358px;
+  position: absolute;
+}
+.modal__label {
+  position: relative;
 }
 
 .modal__input_type_error {
@@ -173,11 +177,7 @@
     font-size: 14px;
   }
   .modal__error {
-   display: flex;
-   justify-content: center;
-    
-
-  }
-  
+    display: flex;
+    justify-content: center;
   }
 }

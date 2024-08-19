@@ -51,31 +51,37 @@
           ></button>
           <h2 class="modal__heading">Edit profile</h2>
           <form class="modal__form" id="edit-profile-form">
-            <input
-              type="text"
-              name="title"
-              placeholder="Jaques Cousteau"
-              class="modal__input"
-              id="profile-title-input"
-              maxlength="40"
-              minlength="2"
-              required
-            />
-            <span class="modal__error" id="profile-title-input-error"></span>
-            <input
-              type="text"
-              name="description"
-              placeholder="Explorer"
-              class="modal__input"
-              id="profile-description-input"
-              maxlength="200"
-              minlength="2"
-              required
-            />
-            <span
-              class="modal__error"
-              id="profile-description-input-error"
-            ></span>
+            <label class="modal__label">
+              <input
+                type="text"
+                name="title"
+                placeholder="Jaques Cousteau"
+                class="modal__input"
+                id="profile-title-input"
+                maxlength="40"
+                minlength="2"
+                required
+              />
+              <span class="modal__error" id="profile-title-input-error"></span>
+            </label>
+          </form>
+          <form class="modal__form">
+            <label class="modal__label">
+              <input
+                type="text"
+                name="description"
+                placeholder="Explorer"
+                class="modal__input"
+                id="profile-description-input"
+                maxlength="200"
+                minlength="2"
+                required
+              />
+              <span
+                class="modal__error"
+                id="profile-description-input-error"
+              ></span>
+            </label>
             <button class="modal__button" disabled type="submit">
               <span class="modal__button-text">Save</span>
             </button>
@@ -93,26 +99,26 @@
           ></button>
           <h2 class="modal__heading">New Place</h2>
           <form class="modal__form" id="add-card-form">
-            <input
-              type="text"
-              name="title"
-              placeholder="Title"
-              class="modal__input modal__input_type_title"
-              minlength="1"
-              maxlength="30"
-              id="card-title-input"
-              required
-            />
-            <span class="modal__error" id="card-title-input-error"></span>
-            <input
-              type="text"
-              name="url"
-              placeholder="Image URL"
-              class="modal__input modal__input_type_url"
-              id="card-url-input"
-              required
-            />
-            <span class="modal__error" id="card-url-input-error"></span>
+            <label class="modal__label">
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                class="modal__input modal__input_type_title"
+                minlength="1"
+                maxlength="30"
+                id="card-title-input"
+                required />
+              <span class="modal__error" id="card-title-input-error"></span>
+              <input
+                type="text"
+                name="url"
+                placeholder="Image URL"
+                class="modal__input modal__input_type_url"
+                id="card-url-input"
+                required />
+              <span class="modal__error" id="card-url-input-error"></span
+            ></label>
             <button class="modal__button modal__button_disabled" type="submit">
               <span class="modal__button-text">Save</span>
             </button>
@@ -121,7 +127,7 @@
       </div>
       <!-- ------------------------- preview card modal -------------------------- -->
       <div class="modal" id="preview-modal">
-        <div class="modal__container modal__type_preview">
+        <div class="modal__container modal__container_type_preview">
           <button
             type="button"
             class="modal__close"
