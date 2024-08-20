@@ -21,21 +21,6 @@ function checkInputValidity(formEl, inputEl, options) {
   }
   hideInputError(formEl, inputEl, options);
 }
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  //let foundInvalid = false;
-  //inputEls.forEach((inputEl) => {
-  //if (!inputEl.validity.valid) {
-  // foundInvalid = true;
-  //  }
-  //});
-  if (hasInvalidInput(inputEls)) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
-  }
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
-}
 
 function setEventListeners(formEl, config) {
   const { inputSelector, submitButtonSelector } = config;
@@ -47,6 +32,23 @@ function setEventListeners(formEl, config) {
       toggleButtonState(inputEls, submitButton, config);
     });
   });
+}
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  //let foundInvalid = false;
+  //inputEls.forEach((inputEl) => {
+  //if (!inputEl.validity.valid) {
+  // foundInvalid = true;
+  //  }
+  //});
+  if (hasInvalidInput(inputEls)) {
+    submitButton.classList.add(inactiveButtonClass);
+    submitButton.disabled = true;
+    console.log("test");
+    return;
+  }
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = false;
 }
 
 function enableValidation(options) {
