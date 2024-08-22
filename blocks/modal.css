@@ -184,5 +184,6 @@
   .modal__error {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 }
