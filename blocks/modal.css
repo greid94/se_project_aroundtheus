@@ -89,6 +89,7 @@
   font-weight: 400;
   text-align: left;
   margin: auto;
+  position: relative;
 }
 
 .modal__button {
@@ -139,9 +140,6 @@
   width: 358px;
   position: absolute;
 }
-.modal__label {
-  position: relative;
-}
 
 .modal__input_type_error {
   border-bottom: 1px solid #ff0000;
@@ -156,6 +154,12 @@
   color: #000;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal__label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 320px) and (max-width: 880px) {
   .modal__container {

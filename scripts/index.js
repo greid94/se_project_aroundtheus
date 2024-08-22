@@ -61,22 +61,33 @@ function openModal(modal) {
   document.addEventListener("keydown", closeModalEsc);
   modal.addEventListener("mousedown", closeOverlay);
 }
+
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  // modal.addEventListener("mousedown", closeOverlay);
+  document.removeEventListener("keydown", closeModalEsc);
+  modal.removeEventListener("mousedown", closeOverlay);
 }
 function renderCard(data, wrapper) {
   const cardElement = getCardElement(data);
   wrapper.prepend(cardElement);
 }
 
+//function closeModalEsc(e) {
+//if (e.key === "Escape") {
+//const modalOpened = document.querySelector(".modal_opened");
+//closePopup(modalOpened);
+//}
+//}
+
 function closeModalEsc(e) {
   if (e.key === "Escape") {
     const modalOpened = document.querySelector(".modal_opened");
-    closePopup(modalOpened);
+    if (modalOpened) {
+      closePopup(modalOpened);
+    }
   }
 }
+
 function closeOverlay(e) {
   if (
     e.target === e.currentTarget ||
