@@ -126,6 +126,9 @@
   margin: auto;
   position: relative;
 }
+.modal__input:focus {
+  outline: none;
+}
 
 .modal__error {
   font-size: 12px;
@@ -185,5 +188,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
+  }
+  .modal__button-text {
+    font-size: 14px;
   }
 }
