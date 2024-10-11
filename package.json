@@ -1,0 +1,11 @@
+{
+  "name": "se_project_aroundtheus",
+  "version": "1.0.0",
+  "description": "This project was my first seeing how javascript and html with this use of methods such as queryselectors and classlists. Also getting to learn how declaring functions and other variables at different points of time affects how javascript calls them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
