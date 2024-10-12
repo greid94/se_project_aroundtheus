@@ -1,6 +1,3 @@
-/* ------------------------------------------------- */
-/*                     Modules
-/* ------------------------------------------------- */
 import "../pages/index.css";
 import Card from "../components/Card.js";
 import { initialCards } from "../utils/constants.js";
@@ -64,6 +61,8 @@ document.querySelector("#profile-edit-button").addEventListener("click", () => {
 const addCardFormPopup = new PopupWithForm(
   "#profile-add-modal",
   (formValues) => {
+    //console.log("Link provided:", formValues.link);
+    //console.log("Title provided:", formValues.title);
     const cardTitle = formValues.title;
     const cardLink = formValues.link;
 
@@ -85,6 +84,7 @@ const imagePopup = new PopupWithImage("#preview-modal");
 imagePopup.setEventListeners();
 
 function handleImageClick(link, name) {
+  //console.log("Image clicked!", { link, name });
   imagePopup.open({ name, link });
 }
 /* ------------------------------------------------- */
@@ -92,11 +92,13 @@ function handleImageClick(link, name) {
 /* ------------------------------------------------- */
 
 const renderer = (cardData) => {
+  //console.log("Rendering card data:", cardData);
   const cardElement = createCard(cardData);
   section.addItem(cardElement);
 };
 
 function createCard(item) {
+  //console.log("Creating card for item:", item);
   const cardElement = new Card(item, "#card-form", handleImageClick);
   return cardElement.createCard();
 }
