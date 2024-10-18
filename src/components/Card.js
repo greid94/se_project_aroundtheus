@@ -2,7 +2,6 @@ class Card {
   constructor({ name, link }, cardSelector, handleImageClick) {
     this._name = name;
     this._link = link;
-
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
   }
@@ -19,12 +18,25 @@ class Card {
   _setEventListeners() {
     this._likeButton = this._element.querySelector(".card__like-button");
     this._cardImage = this._element.querySelector(".card__image");
+    this._trashButton = this._element.querySelector(".card__delete-button");
 
-    this._trashButton = this._element.querySelector(".card__trash-button");
+    if (this._likeButton) {
+      this._likeButton.addEventListener("click", () => {
+        this._handleLikeButton();
+      });
+    }
 
-    this._cardImage.addEventListener("click", () => {
-      this._handleImageClick(this._link, this._name);
-    });
+    if (this._cardImage) {
+      this._cardImage.addEventListener("click", () => {
+        this._handleImageClick(this._link, this._name);
+      });
+    }
+
+    if (this._trashButton) {
+      this._trashButton.addEventListener("click", () => {
+        this._handleDeleteButton();
+      });
+    }
   }
 
   _handleLikeButton() {
@@ -32,7 +44,7 @@ class Card {
   }
 
   _handleDeleteButton() {
-    this._trashButton.remove();
+    this._element.remove();
     this._element = null;
   }
 
