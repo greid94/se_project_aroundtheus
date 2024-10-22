@@ -7,25 +7,19 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
-/* ------------------------------------------------- */
-/*                  Card Template 
-/* ------------------------------------------------- */
+/* ------------------------------ Card Template ----------------------------- */
 const cardData = {
   name: "Yosemite Valley",
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-/* ------------------------------------------------- */
-/*                     User Info 
-/* ------------------------------------------------- */
+/* -------------------------------- user Info ------------------------------- */
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
 });
 
-/* ------------------------------------------------- */
-/*                 Profile Edit Form 
-/* ------------------------------------------------- */
+/* --------------------------- Profile Edit Button -------------------------- */
 const profileEditPopup = new PopupWithForm(
   "#profile-edit-modal",
   (formValues) => {
@@ -55,9 +49,7 @@ document.querySelector("#profile-edit-button").addEventListener("click", () => {
 
   profileEditPopup.open();
 });
-/* ------------------------------------------------- */
-/*                 Add Card/Image Form 
-/* ------------------------------------------------- */
+/* ----------------------------- Add Card/Image ----------------------------- */
 const addCardFormPopup = new PopupWithForm(
   "#profile-add-modal",
   (formValues) => {
@@ -75,18 +67,14 @@ const addCardFormPopup = new PopupWithForm(
 document.querySelector(".profile__add-button").addEventListener("click", () => {
   addCardFormPopup.open();
 });
-/* ------------------------------------------------- */
-/*                 Preview Image Popup 
-/* ------------------------------------------------- */
+/* --------------------------- Preview Image Modal -------------------------- */
 const imagePopup = new PopupWithImage("#preview-modal");
 imagePopup.setEventListeners();
 
 function handleImageClick(link, name) {
   imagePopup.open({ name, link });
 }
-/* ------------------------------------------------- */
-/*                 Render Cards/Image 
-/* ------------------------------------------------- */
+/* --------------------------- Render Cards/Images -------------------------- */
 
 const renderer = (cardData) => {
   const cardElement = createCard(cardData);
@@ -102,9 +90,7 @@ const section = new Section({ items: initialCards, renderer }, ".card__list");
 console.log(initialCards);
 section.renderItems();
 
-/* ------------------------------------------------- */
-/*                     Form Validation 
-/* ------------------------------------------------- */
+/* ----------------------------- Form Validation ---------------------------- */
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
